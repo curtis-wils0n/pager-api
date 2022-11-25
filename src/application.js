@@ -10,10 +10,6 @@ const app = express();
 
 const db = require("./db");
 
-// TODO: Replace below
-const days = require("./routes/days");
-const appointments = require("./routes/appointments");
-const interviewers = require("./routes/interviewers");
 const books = require('./routes/books');
 
 function read(file) {
@@ -32,17 +28,12 @@ function read(file) {
 }
 
 module.exports = function application(
-  ENV,
-  actions = { updateAppointment: () => {} }
+  ENV
 ) {
   app.use(cors());
   app.use(helmet());
   app.use(bodyparser.json());
   
-  // TODO: Replace below
-  app.use("/api", days(db));
-  app.use("/api", appointments(db, actions.updateAppointment));
-  app.use("/api", interviewers(db));
   app.use('/api', books(db));
 
   if (ENV === "development" || ENV === "test") {
