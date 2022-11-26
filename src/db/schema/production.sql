@@ -1,2 +1,2 @@
-INSERT INTO books (name)
+INSERT INTO books (title)
 VALUES ('Dune');

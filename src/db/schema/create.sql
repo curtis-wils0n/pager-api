@@ -1,6 +1,30 @@
 DROP TABLE IF EXISTS books CASCADE;
+-- DROP TABLE IF EXISTS authors CASCADE;
+-- DROP TABLE IF EXISTS publishers CASCADE;
+-- DROP TABLE IF EXISTS genres CASCADE;
 
 CREATE TABLE books (
   id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(255) NOT NULL
+  title VARCHAR(255) NOT NULL,
+  -- year INTEGER NOT NULL,
+  -- cover_art_url VARCHAR(255) NOT NULL,
+  -- author_id INTEGER REFERENCES authors(id) ON DELETE CASCADE,
+  -- publisher_id INTEGER REFERENCES publishers(id) ON DELETE CASCADE,
+  -- genre_id INTEGER REFERENCES genres(id) ON DELETE CASCADE
 );
+
+-- CREATE TABLE authors (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   publisher_id INTEGER REFERENCES publishers(id) ON DELETE CASCADE
+-- );
+
+-- CREATE TABLE publishers (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   name VARCHAR(255) NOT NULL,
+--   location VARCHAR(255) NOT NULL
+-- );
+
+-- CREATE TABLE genres (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   name VARCHAR(255) NOT NULL
+-- );
