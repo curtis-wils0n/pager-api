@@ -36,8 +36,6 @@ module.exports = db => {
       pub_name,
       pub_location
     } = request.body;
-    console.log(author_name, genre_name, book_title, book_year, book_cover_art_url, pub_name, pub_location);
-    
     db.query(
       `
         INSERT INTO authors (name)
