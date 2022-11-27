@@ -47,7 +47,8 @@ module.exports = db => {
       );
       `,
       [author_name]
-    ).then(() => {
+    )
+    .then(() => {
       db.query(
         `
           INSERT INTO genres (name)
@@ -57,17 +58,42 @@ module.exports = db => {
           )
         `,
         [genre]
-      ).then(() => {
+      )
+      .then(() => {
         db.query(
           `
             INSERT INTO books (title, year, cover_art_url, genre_id)
-            SELECT $1::text, $2::integer, $3::text, (SELECT id FROM genres WHERE name ILIKE $4)::integer
+            SELECT 
+              $1::text,
+              $2::integer,
+              $3::text,
+              (SELECT id FROM genres WHERE name ILIKE $4)::integer 
             WHERE NOT EXISTS (
               SELECT 1 FROM books WHERE title = $1::text
             );
           `,
           [book_title, book_year, book_cover_art_url, genre]
         )
+        .then(() => {
+          db.query(
+            `
+              INSERT INTO publishers (name, location, author_id, book_id)
+              SELECT
+                $1::text,
+                $2::text,
+                (SELECT id FROM authors WHERE name ILIKE $3)::integer,
+                (SELECT id FROM books WHERE title ILIKE $4)::integer
+              WHERE NOT EXISTS (
+                SELECT 1 FROM publishers WHERE name = $1::text
+              );
+            `,
+            [pub_name, pub_location, author_name, book_title]
+          )
+          .then(() => {
+            response.status(204).json({});
+          })
+          .catch(error => console.log(error));
+        })
       })
     })
   });
