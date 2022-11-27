@@ -11,14 +11,11 @@ const app = express();
 const db = require("./db");
 
 const books = require('./routes/books');
-const authors = require('./routes/authors');
-const publishers = require('./routes/publishers');
-const genres = require('./routes/genres');
-const users = require('./routes/users');
-const shelves = require('./routes/shelves');
 const lists = require('./routes/lists');
-const on_list = require('./routes/on_list');
 const reviews = require('./routes/reviews');
+const shelves = require('./routes/users/shelves');
+const user_lists = require('./routes/users/lists');
+const user_reviews = require('./routes/users/reviews');
 
 function read(file) {
   return new Promise((resolve, reject) => {
@@ -43,14 +40,11 @@ module.exports = function application(
   app.use(bodyparser.json());
   
   app.use('/api', books(db));
-  app.use('/api', authors(db));
-  app.use('/api', publishers(db));
-  app.use('/api', genres(db));
-  app.use('/api', users(db));
-  app.use('/api', shelves(db));
   app.use('/api', lists(db));
-  app.use('/api', on_list(db));
   app.use('/api', reviews(db));
+  app.use('/api', shelves(db));
+  app.use('/api', user_lists(db));
+  app.use('/api', user_reviews(db));
 
   if (ENV === "development" || ENV === "test") {
     Promise.all([

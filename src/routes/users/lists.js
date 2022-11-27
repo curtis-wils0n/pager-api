@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 module.exports = db => {
-  router.get("/lists", (request, response) => {
+  router.get("/lists/:id", (request, response) => {
     db.query(`
       SELECT 
         lists.id,
@@ -10,8 +10,10 @@ module.exports = db => {
         users.first_name,
         users.last_name
       FROM lists
-      JOIN users ON lists.user_id = users.id;
-    `).then(({ rows: lists }) => {
+      JOIN users ON lists.user_id = users.id
+      WHERE users.id = $1
+    `, [request.params.id]
+    ).then(({ rows: lists }) => {
       response.json(
         lists.reduce(
           (previous, current) => ({ ...previous, [current.id]: current }),

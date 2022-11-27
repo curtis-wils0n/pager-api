@@ -1,24 +1,27 @@
 const router = require("express").Router();
 
 module.exports = db => {
-  router.get("/books", (request, response) => {
+  router.get("/shelves/:id", (request, response) => {
     db.query(`
-      SELECT 
-        books.id,
+      SELECT
+        shelves.id,
         books.title,
-        authors.name AS author_name,
+        authors.name,
         books.year,
         books.cover_art_url,
-        genres.name AS genre,
         publishers.name AS publisher_name,
-        publishers.location
-      FROM publishers
+        publishers.location,
+        genres.name AS genre
+      FROM shelves
+      JOIN books ON shelves.book_id = books.id
+      JOIN publishers ON publishers.book_id = books.id
       JOIN authors ON publishers.author_id = authors.id
-      JOIN books ON publishers.book_id = books.id
       JOIN genres ON books.genre_id = genres.id
-    `).then(({ rows: books }) => {
+      WHERE user_id = $1
+    `, [request.params.id]
+    ).then(({ rows: shelves }) => {
       response.json(
-        books.reduce(
+        shelves.reduce(
           (previous, current) => ({ ...previous, [current.id]: current }),
           {}
         )
