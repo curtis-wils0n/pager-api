@@ -22,7 +22,7 @@ CREATE TABLE books (
   id SERIAL PRIMARY KEY NOT NULL,
   title VARCHAR(255) NOT NULL,
   year INTEGER NOT NULL,
-  cover_art_url VARCHAR(255) DEFAULT 'https://freesvg.org/img/CrazyTerabyte_Book.png',
+  cover_art_url TEXT DEFAULT 'https://freesvg.org/img/CrazyTerabyte_Book.png',
   genre_id INTEGER REFERENCES genres(id) ON DELETE CASCADE
 );
 
