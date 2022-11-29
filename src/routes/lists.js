@@ -11,13 +11,9 @@ module.exports = db => {
         users.last_name
       FROM lists
       JOIN users ON lists.user_id = users.id;
-    `).then(({ rows: lists }) => {
-      response.json(
-        lists.reduce(
-          (previous, current) => ({ ...previous, [current.id]: current }),
-          {}
-        )
-      );
+    `)
+    .then(({ rows: lists }) => {
+      response.json(lists);
     });
   });
 
