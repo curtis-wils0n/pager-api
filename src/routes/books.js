@@ -39,8 +39,7 @@ module.exports = db => {
         WHERE NOT EXISTS (
           SELECT 1 FROM authors WHERE name ILIKE $1::text
         );
-      `,
-      [author_name]
+      `, [author_name]
     )
     .then(() => {
       db.query(
@@ -50,8 +49,7 @@ module.exports = db => {
           WHERE NOT EXISTS (
             SELECT 1 FROM genres WHERE name ILIKE $1::text
           )
-        `,
-        [genre_name]
+        `, [genre_name]
       )
     })
     .then(() => {
@@ -66,8 +64,7 @@ module.exports = db => {
           WHERE NOT EXISTS (
             SELECT 1 FROM books WHERE title = $1::text
           );
-        `,
-        [book_title, book_year, book_cover_art_url, genre_name]
+        `, [book_title, book_year, book_cover_art_url, genre_name]
       )
     })
     .then(() => {
@@ -82,8 +79,7 @@ module.exports = db => {
           WHERE NOT EXISTS (
             SELECT 1 FROM publishers WHERE name = $1::text
           );
-        `,
-        [pub_name, pub_location, author_name, book_title]
+        `, [pub_name, pub_location, author_name, book_title]
       )
     })
     .then(() => {
