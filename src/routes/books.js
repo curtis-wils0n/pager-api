@@ -16,10 +16,9 @@ module.exports = db => {
       JOIN authors ON publishers.author_id = authors.id
       JOIN books ON publishers.book_id = books.id
       JOIN genres ON books.genre_id = genres.id
-    `).then(({ rows: books }) => {
-      response.json(
-        books
-      );
+    `)
+    .then(({ rows: books }) => {
+      response.json(books);
     });
   });
 
@@ -42,7 +41,8 @@ module.exports = db => {
         );
       `,
       [author_name]
-    ).then(() => {
+    )
+    .then(() => {
       db.query(
         `
           INSERT INTO genres (name)
@@ -53,7 +53,8 @@ module.exports = db => {
         `,
         [genre_name]
       )
-    }).then(() => {
+    })
+    .then(() => {
       db.query(
         `
           INSERT INTO books (title, year, cover_art_url, genre_id)
@@ -68,7 +69,8 @@ module.exports = db => {
         `,
         [book_title, book_year, book_cover_art_url, genre_name]
       )
-    }).then(() => {
+    })
+    .then(() => {
       db.query(
         `
           INSERT INTO publishers (name, location, author_id, book_id)
@@ -83,9 +85,11 @@ module.exports = db => {
         `,
         [pub_name, pub_location, author_name, book_title]
       )
-    }).then(() => {
-      response.status(204).json({});
-    }).catch(error => console.log(error));
+    })
+    .then(() => {
+      response.status(204).json([]);
+    })
+    .catch(error => console.log(error));
   });
 
   return router;
