@@ -18,10 +18,7 @@ module.exports = db => {
       JOIN genres ON books.genre_id = genres.id
     `).then(({ rows: books }) => {
       response.json(
-        books.reduce(
-          (previous, current) => ({ ...previous, [current.id]: current }),
-          {}
-        )
+        books
       );
     });
   });

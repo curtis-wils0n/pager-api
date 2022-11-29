@@ -13,10 +13,7 @@ module.exports = db => {
       JOIN users ON lists.user_id = users.id;
     `).then(({ rows: lists }) => {
       response.json(
-        lists.reduce(
-          (previous, current) => ({ ...previous, [current.id]: current }),
-          {}
-        )
+        lists
       );
     });
   });
