@@ -17,9 +17,9 @@ module.exports = db => {
       JOIN books ON publishers.book_id = books.id
       JOIN genres ON books.genre_id = genres.id
     `)
-    .then(({ rows: books }) => {
-      response.json(books);
-    });
+      .then(({ rows: books }) => {
+        response.json(books);
+      });
   });
 
   router.put("/books", (request, response) => {
@@ -41,20 +41,20 @@ module.exports = db => {
         );
       `, [author_name]
     )
-    .then(() => {
-      db.query(
-        `
+      .then(() => {
+        db.query(
+          `
           INSERT INTO genres (name)
           SELECT $1::text
           WHERE NOT EXISTS (
             SELECT 1 FROM genres WHERE name ILIKE $1::text
           )
         `, [genre_name]
-      )
-    })
-    .then(() => {
-      db.query(
-        `
+        )
+      })
+      .then(() => {
+        db.query(
+          `
           INSERT INTO books (title, year, cover_art_url, genre_id)
           SELECT 
             $1::text,
@@ -65,11 +65,11 @@ module.exports = db => {
             SELECT 1 FROM books WHERE title = $1::text
           );
         `, [book_title, book_year, book_cover_art_url, genre_name]
-      )
-    })
-    .then(() => {
-      db.query(
-        `
+        )
+      })
+      .then(() => {
+        db.query(
+          `
           INSERT INTO publishers (name, location, author_id, book_id)
           SELECT
             $1::text,
@@ -80,12 +80,12 @@ module.exports = db => {
             SELECT 1 FROM publishers WHERE name = $1::text
           );
         `, [pub_name, pub_location, author_name, book_title]
-      )
-    })
-    .then(() => {
-      response.status(204).json([]);
-    })
-    .catch(error => console.log(error));
+        )
+      })
+      .then(() => {
+        response.status(204).json([]);
+      })
+      .catch(error => console.log(error));
   });
 
   return router;

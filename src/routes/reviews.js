@@ -25,9 +25,9 @@ module.exports = db => {
       JOIN authors ON publishers.author_id = authors.id
       JOIN genres ON books.genre_id = genres.id
     `)
-    .then(({ rows: reviews }) => {
-      response.json(reviews);
-    });
+      .then(({ rows: reviews }) => {
+        response.json(reviews);
+      });
   });
 
   router.put("/reviews", (request, response) => {
@@ -49,11 +49,11 @@ module.exports = db => {
         ) VALUES ($1, $2, $3, $4, $5);
       `, [stars, recommended, description, user_id, book_id]
     )
-    .then(() => {
-      response.status(204).json([]);
-    })
-    .catch(error => console.log(error));
-  })
+      .then(() => {
+        response.status(204).json([]);
+      })
+      .catch(error => console.log(error));
+  });
 
   return router;
 };

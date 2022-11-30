@@ -12,9 +12,32 @@ module.exports = db => {
       FROM lists
       JOIN users ON lists.user_id = users.id;
     `)
-    .then(({ rows: lists }) => {
-      response.json(lists);
-    });
+      .then(({ rows: lists }) => {
+        response.json(lists);
+      });
+  });
+
+  router.put("/lists", (request, response) => {
+    const {
+      title,
+      description,
+      first_name,
+      last_name
+    } = request.body;
+    db.query(
+      `
+        INSERT INTO reviews (
+          title,
+          description,
+          first_name,
+          last_name
+        ) VALUES ($1, $2, $3, $4);
+      `, [title, description, first_name, last_name]
+    )
+      .then(() => {
+        response.status(204).json([]);
+      })
+      .catch(error => console.log(error));
   });
 
   return router;
