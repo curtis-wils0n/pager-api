@@ -21,8 +21,12 @@ VALUES
   ('Dan Simmons'),
   ('James Clear'),
   ('Colleen Hoover'),
+  ('Mark Manson'),
   ('Robert Greene'),
-  ('Robert T. Kiyosaki');
+  ('Robert T. Kiyosaki'),
+  ('Dale Carnegie'),
+  ('Stephen King'),
+  ('Richard Dawkins');
 
 INSERT INTO books (title, year, cover_art_url, genre_id)
 VALUES 
@@ -42,7 +46,10 @@ VALUES
   ('The 48 Laws of Power', 1998, 'https://covers.openlibrary.org/b/id/12920669-L.jpg', 6),
   ('It Starts With Us', 2022, 'https://covers.openlibrary.org/b/id/12964213-L.jpg', 5),
   ('Rich Dad, Poor Dad', 1990, 'https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg', 6),
-  ('How to Win Friends and Influence People', 1913, 'https://covers.openlibrary.org/b/id/12996599-L.jpg', 6);
+  ('How to Win Friends and Influence People', 1913, 'https://covers.openlibrary.org/b/id/12996599-L.jpg', 6),
+  ('Verity', 2018, 'https://covers.openlibrary.org/b/id/12924621-L.jpg', 5),
+  ('Duma Key', 2008, 'https://covers.openlibrary.org/b/id/10582232-L.jpg', 5),
+  ('The God Delusion', 2001, 'https://covers.openlibrary.org/b/id/8231555-L.jpg', 6);
 
 INSERT INTO publishers (name, location, author_id, book_id)
 VALUES
@@ -53,6 +60,8 @@ VALUES
   ('Bantam Spectra', 'New York City, New York', 5, 5),
   ('Charles Scribner''s Sons', 'New York City, New York', 6, 6),
   ('Secker & Warburg', 'London, England', 7, 7),
+  -- TODO: add 'publishing_house' with name so we can link to id instead of 
+  -- repeating values. Could do the same with 'publishing_location'.
   ('Simon & Schuster', 'Manhattan, New York City', 8, 8),
   ('Simon & Schuster', 'Manhattan, New York City', 12, 12),
   ('Simon & Schuster', 'Manhattan, New York City', 12, 15),
@@ -62,7 +71,10 @@ VALUES
   ('Penguin', 'New York City, New York', 11, 11),
   ('Harper Collins', 'New York City, New York', 13, 13),
   ('Viking', 'New York City, New York', 14, 14),
-  ('Warner Books', 'New York City, New York', 15, 16);
+  ('Warner Books', 'New York City, New York', 15, 16),
+  ('Grand Central Publishing', 'New York City, New York', 12, 18),
+  ('Hodder & Stoughton', 'London, England', 17, 19),
+  ('Houghton Mifflin Harcourt', 'Boston, Massachusetts', 18, 20);
 
 INSERT INTO users (first_name, last_name, username, email, profile_pic_url)
 VALUES
