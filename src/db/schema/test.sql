@@ -21,8 +21,13 @@ VALUES
   ('Dan Simmons'),
   ('James Clear'),
   ('Colleen Hoover'),
+  ('Mark Manson'),
   ('Robert Greene'),
-  ('Robert T. Kiyosaki');
+  ('Robert T. Kiyosaki'),
+  ('Dale Carnegie'),
+  ('Stephen King'),
+  ('Richard Dawkins'),
+  ('Steven Erikson');
 
 INSERT INTO books (title, year, cover_art_url, genre_id)
 VALUES 
@@ -42,7 +47,15 @@ VALUES
   ('The 48 Laws of Power', 1998, 'https://covers.openlibrary.org/b/id/12920669-L.jpg', 6),
   ('It Starts With Us', 2022, 'https://covers.openlibrary.org/b/id/12964213-L.jpg', 5),
   ('Rich Dad, Poor Dad', 1990, 'https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg', 6),
-  ('How to Win Friends and Influence People', 1913, 'https://covers.openlibrary.org/b/id/12996599-L.jpg', 6);
+  ('How to Win Friends and Influence People', 1913, 'https://covers.openlibrary.org/b/id/12996599-L.jpg', 6),
+  ('Verity', 2018, 'https://covers.openlibrary.org/b/id/12924621-L.jpg', 5),
+  ('Duma Key', 2008, 'https://covers.openlibrary.org/b/id/10582232-L.jpg', 5),
+  ('The God Delusion', 2001, 'https://covers.openlibrary.org/b/id/8231555-L.jpg', 6),
+  ('The Claw of the Conciliator', 1981, 'https://img.bookfrom.net/img/1707050829/1074_the_claw_of_the_conciliator.jpg', 1),
+  ('The Sword of the Lictor', 1981, 'https://covers.openlibrary.org/b/id/6594789-L.jpg', 1),
+  ('The Citadel of the Autarch', 1982, 'https://upload.wikimedia.org/wikipedia/en/6/62/TheCitadelOfTheAutarch.jpg', 1),
+  ('Gardens of the Moon', 1999, 'https://covers.openlibrary.org/b/id/6304201-L.jpg', 4),
+  ('Deadhouse Gates', 2000, 'https://covers.openlibrary.org/b/id/6424046-L.jpg', 4);
 
 INSERT INTO publishers (name, location, author_id, book_id)
 VALUES
@@ -53,16 +66,27 @@ VALUES
   ('Bantam Spectra', 'New York City, New York', 5, 5),
   ('Charles Scribner''s Sons', 'New York City, New York', 6, 6),
   ('Secker & Warburg', 'London, England', 7, 7),
+  -- TODO: add 'publishing_house' with name so we can link to id instead of 
+  -- repeating values. Could do the same with 'publishing_location'.
   ('Simon & Schuster', 'Manhattan, New York City', 8, 8),
   ('Simon & Schuster', 'Manhattan, New York City', 12, 12),
   ('Simon & Schuster', 'Manhattan, New York City', 12, 15),
   ('Simon & Schuster', 'Manhattan, New York City', 16, 17),
+  ('Simon & Schuster', 'Manhattan, New York City', 8, 21),
+  ('Simon & Schuster', 'Manhattan, New York City', 8, 22),
+  ('Simon & Schuster', 'Manhattan, New York City', 8, 23),
   ('Gollancz', 'London, England', 9, 9),
   ('Doubleday', 'New York City, New York', 10, 10),
   ('Penguin', 'New York City, New York', 11, 11),
   ('Harper Collins', 'New York City, New York', 13, 13),
   ('Viking', 'New York City, New York', 14, 14),
-  ('Warner Books', 'New York City, New York', 15, 16);
+  ('Warner Books', 'New York City, New York', 15, 16),
+  ('Grand Central Publishing', 'New York City, New York', 12, 18),
+  ('Hodder & Stoughton', 'London, England', 17, 19),
+  ('Houghton Mifflin Harcourt', 'Boston, Massachusetts', 18, 20),
+  ('Tor', 'New York City: New York', 19, 24),
+  ('Tor', 'New York City: New York', 19, 25);
+
 
 INSERT INTO users (first_name, last_name, username, email, profile_pic_url)
 VALUES

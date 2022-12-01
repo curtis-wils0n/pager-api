@@ -16,6 +16,7 @@ module.exports = db => {
       JOIN authors ON publishers.author_id = authors.id
       JOIN books ON publishers.book_id = books.id
       JOIN genres ON books.genre_id = genres.id
+      ORDER BY author_name, year, title
     `)
       .then(({ rows: books }) => {
         response.json(books);

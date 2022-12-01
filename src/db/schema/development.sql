@@ -26,7 +26,8 @@ VALUES
   ('Robert T. Kiyosaki'),
   ('Dale Carnegie'),
   ('Stephen King'),
-  ('Richard Dawkins');
+  ('Richard Dawkins'),
+  ('Steven Erikson');
 
 INSERT INTO books (title, year, cover_art_url, genre_id)
 VALUES 
@@ -49,7 +50,12 @@ VALUES
   ('How to Win Friends and Influence People', 1913, 'https://covers.openlibrary.org/b/id/12996599-L.jpg', 6),
   ('Verity', 2018, 'https://covers.openlibrary.org/b/id/12924621-L.jpg', 5),
   ('Duma Key', 2008, 'https://covers.openlibrary.org/b/id/10582232-L.jpg', 5),
-  ('The God Delusion', 2001, 'https://covers.openlibrary.org/b/id/8231555-L.jpg', 6);
+  ('The God Delusion', 2001, 'https://covers.openlibrary.org/b/id/8231555-L.jpg', 6),
+  ('The Claw of the Conciliator', 1981, 'https://img.bookfrom.net/img/1707050829/1074_the_claw_of_the_conciliator.jpg', 1),
+  ('The Sword of the Lictor', 1981, 'https://covers.openlibrary.org/b/id/6594789-L.jpg', 1),
+  ('The Citadel of the Autarch', 1982, 'https://upload.wikimedia.org/wikipedia/en/6/62/TheCitadelOfTheAutarch.jpg', 1),
+  ('Gardens of the Moon', 1999, 'https://covers.openlibrary.org/b/id/6304201-L.jpg', 4),
+  ('Deadhouse Gates', 2000, 'https://covers.openlibrary.org/b/id/6424046-L.jpg', 4);
 
 INSERT INTO publishers (name, location, author_id, book_id)
 VALUES
@@ -66,6 +72,9 @@ VALUES
   ('Simon & Schuster', 'Manhattan, New York City', 12, 12),
   ('Simon & Schuster', 'Manhattan, New York City', 12, 15),
   ('Simon & Schuster', 'Manhattan, New York City', 16, 17),
+  ('Simon & Schuster', 'Manhattan, New York City', 8, 21),
+  ('Simon & Schuster', 'Manhattan, New York City', 8, 22),
+  ('Simon & Schuster', 'Manhattan, New York City', 8, 23),
   ('Gollancz', 'London, England', 9, 9),
   ('Doubleday', 'New York City, New York', 10, 10),
   ('Penguin', 'New York City, New York', 11, 11),
@@ -74,7 +83,10 @@ VALUES
   ('Warner Books', 'New York City, New York', 15, 16),
   ('Grand Central Publishing', 'New York City, New York', 12, 18),
   ('Hodder & Stoughton', 'London, England', 17, 19),
-  ('Houghton Mifflin Harcourt', 'Boston, Massachusetts', 18, 20);
+  ('Houghton Mifflin Harcourt', 'Boston, Massachusetts', 18, 20),
+  ('Tor', 'New York City: New York', 19, 24),
+  ('Tor', 'New York City: New York', 19, 25);
+
 
 INSERT INTO users (first_name, last_name, username, email, profile_pic_url)
 VALUES
