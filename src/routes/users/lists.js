@@ -3,23 +3,18 @@ const router = require("express").Router();
 module.exports = db => {
   router.get("/lists/:id", (request, response) => {
     db.query(`
-      SELECT 
-        lists.id,
-        lists.title,
-        lists.description,
-        users.first_name,
-        users.last_name
-      FROM lists
-      JOIN users ON lists.user_id = users.id
-      WHERE users.id = $1
+    SELECT 
+    lists.id, 
+    lists.title, 
+    books.title,
+    books.cover_art_url
+    FROM lists
+    LEFT OUTER JOIN on_list ON lists.id = on_list.list_id
+    LEFT OUTER JOIN books ON on_list.book_id = books.id
+    WHERE on_list.list_id = 1
     `, [request.params.id]
     ).then(({ rows: lists }) => {
-      response.json(
-        lists.reduce(
-          (previous, current) => ({ ...previous, [current.id]: current }),
-          {}
-        )
-      );
+      response.json(lists);
     });
   });
 

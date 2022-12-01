@@ -9,12 +9,8 @@ module.exports = db => {
         lists.description,
         users.first_name,
         users.last_name
-        books.id
       FROM lists
-      JOIN users ON lists.user_id = users.id
-      LEFT OUTER JOIN on_list
-      ON lists.id = on_list.book_id
-      AND on_list.list_id = 1
+      JOIN users ON lists.user_id = users.id;
     `)
       .then(({ rows: lists }) => {
         response.json(lists);
