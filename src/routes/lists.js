@@ -9,8 +9,12 @@ module.exports = db => {
         lists.description,
         users.first_name,
         users.last_name
+        books.id
       FROM lists
-      JOIN users ON lists.user_id = users.id;
+      JOIN users ON lists.user_id = users.id
+      LEFT OUTER JOIN on_list
+      ON lists.id = on_list.book_id
+      AND on_list.list_id = 1
     `)
       .then(({ rows: lists }) => {
         response.json(lists);
@@ -26,7 +30,7 @@ module.exports = db => {
     } = request.body;
     db.query(
       `
-        INSERT INTO reviews (
+        INSERT INTO lists (
           title,
           description,
           first_name,
