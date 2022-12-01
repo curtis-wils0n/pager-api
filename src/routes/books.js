@@ -1,4 +1,4 @@
-import bookQuery from '../db/queries/bookQuery';
+const bookQuery = require('../db/queries/bookQuery');
 
 module.exports = db => {
   return bookQuery;
