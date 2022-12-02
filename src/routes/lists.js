@@ -4,15 +4,15 @@ module.exports = db => {
   router.get("/lists", (request, response) => {
     db.query(`
      SELECT 
-     lists.id, 
-     lists.title,
-     books.title,
-     books.cover_art_url
+      lists.id, 
+      lists.title,
+      books.title,
+      books.cover_art_url
      FROM lists
      LEFT OUTER JOIN on_list ON lists.id = on_list.list_id
      LEFT OUTER JOIN books ON on_list.book_id = books.id
-     GROUP BY on_list.list_id 
-    `)
+     WHERE lists.user_id = $1;
+    `, [1])
       .then(({ rows: lists }) => {
         response.json(lists);
       });
