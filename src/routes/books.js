@@ -26,7 +26,7 @@ module.exports = db => {
   router.put("/books", (request, response) => {
     const { 
       author_name,
-      genre: genre_name,
+      genre,
       book_title,
       book_year,
       book_cover_art_url,
@@ -50,7 +50,7 @@ module.exports = db => {
           WHERE NOT EXISTS (
             SELECT 1 FROM genres WHERE name ILIKE $1::text
           )
-        `, [genre_name]
+        `, [genre]
         )
       })
       .then(() => {
@@ -65,7 +65,7 @@ module.exports = db => {
           WHERE NOT EXISTS (
             SELECT 1 FROM books WHERE title = $1::text
           );
-        `, [book_title, book_year, book_cover_art_url, genre_name]
+        `, [book_title, book_year, book_cover_art_url, genre]
         )
       })
       .then(() => {
