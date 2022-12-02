@@ -90,10 +90,10 @@ VALUES
 
 INSERT INTO users (first_name, last_name, username, email, profile_pic_url)
 VALUES
-  ('Test', 'McTest', 'testman', 'test@test.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
-  ('Best', 'McBest', 'bestman', 'best@best.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
-  ('Rest', 'McRest', 'restman', 'rest@rest.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
-  ('Zest', 'McZest', 'zestman', 'zest@zest.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png');
+  ('Abigail', 'Abraham', 'abby123', 'abi.abr@gmail.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
+  ('Benjamin', 'Burgess', 'benjy', 'benj.burg@hotmail.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
+  ('Chloe', 'Cornish', 'cornycorn', 'corny.corn@icloud.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
+  ('David', 'Dawood', 'dawood_david', 'dd@gmail.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png');
 
 INSERT INTO shelves (user_id, book_id)
 VALUES
@@ -107,6 +107,22 @@ VALUES
   (1, 8),
   (1, 9),
   (1, 10),
+  (1, 11),
+  (1, 12),
+  (1, 13),
+  (1, 14),
+  (1, 15),
+  (1, 16),
+  (1, 17),
+  (1, 18),
+  (1, 19),
+  (1, 20),
+  (1, 21),
+  (1, 22),
+  (1, 23),
+  (1, 24),
+  (1, 25),
+  (1, 10),
   (2, 1),
   (2, 2),
   (2, 3),
@@ -114,6 +130,16 @@ VALUES
   (2, 5),
   (2, 6),
   (2, 7),
+  (2, 8),
+  (2, 9),
+  (2, 10),
+  (2, 11),
+  (2, 12),
+  (2, 13),
+  (2, 14),
+  (2, 15),
+  (2, 16),
+  (2, 17),
   (3, 1),
   (4, 1),
   (4, 2),
@@ -123,7 +149,11 @@ VALUES
   (4, 6),
   (4, 7),
   (4, 8),
-  (4, 9);
+  (4, 9),
+  (4, 10),
+  (4, 11),
+  (4, 12),
+  (4, 13);
 
 INSERT INTO lists (title, description, user_id)
 VALUES
