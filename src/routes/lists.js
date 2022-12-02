@@ -11,7 +11,7 @@ module.exports = db => {
      FROM lists
      LEFT OUTER JOIN on_list ON lists.id = on_list.list_id
      LEFT OUTER JOIN books ON on_list.book_id = books.id
-     WHERE on_list.list_id = 1
+     GROUP BY on_list.list_id 
     `)
       .then(({ rows: lists }) => {
         response.json(lists);
