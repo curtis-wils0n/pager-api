@@ -157,10 +157,11 @@ VALUES
 
 INSERT INTO lists (title, description, user_id)
 VALUES
-  ('Test''s favourite books of 2022', 'These are some books that I really liked reading in 2022', 1),
-  ('Best''s favourite books of 1998', 'These are some books that I remember really enjoying in 1998', 2),
-  ('Test''s revised favourite books list of 2022', 'Here are a new bunch of books that I actually like better than the last list I made!', 1),
-  ('Zest''s summer reading catalogue', 'READ THESE', 4);
+  ('Abby''s favourite books of 2022', 'These are some books that I really liked reading in 2022', 1),
+  ('Benjamin''s favourite books of 1998', 'These are some books that I remember really enjoying in 1998', 2),
+  ('Abby''s revised favourite books list of 2022', 'Here are a new bunch of books that I actually like better than the last list I made!', 1),
+  ('David''s summer reading catalogue', 'READ THESE', 4),
+  ('Chloe''s books to check out', 'I''ve been recommending these books to ALL of my friends this year, so I hope you''ll like them too!', 3);
 
 INSERT INTO on_list (list_id, book_id)
 VALUES
@@ -168,27 +169,36 @@ VALUES
   (1, 2),
   (1, 3),
   (1, 4),
-  (2, 1),
-  (2, 2),
-  (2, 3),
-  (2, 4),
   (2, 5),
   (2, 6),
   (2, 7),
-  (3, 1),
-  (3, 2),
-  (3, 3),
-  (3, 4),
-  (3, 5),
-  (3, 6),
-  (3, 7),
-  (4, 1),
+  (2, 8),
+  (2, 9),
+  (2, 10),
+  (2, 11),
+  (3, 9),
+  (3, 10),
+  (3, 11),
+  (3, 12),
+  (3, 13),
+  (3, 14),
+  (3, 15),
   (4, 2),
-  (4, 3);
+  (4, 13),
+  (4, 22),
+  (5, 23),
+  (5, 1),
+  (5, 2),
+  (5, 16),
+  (5, 17),
+  (5, 20),
+  (5, 18),
+  (5, 14);
 
 INSERT INTO reviews (stars, recommended, description, user_id, book_id)
 VALUES
   (5, true, 'This is one of my favourite books, read it.', 2, 2),
-  (1, false, 'This is the worst book on earth, don''t read it', 2, 9),
+  (5, true, 'This is the worst book on earth, don''t read it (just kidding)', 2, 9),
   (2, true, 'I don''t think it''s the best book, but it was entertaining to read.', 4, 1),
-  (4, false, 'I recognize that it''s a classic, but it takes way too long to get to the good parts.', 3, 8);
+  (4, false, 'I recognize that it''s a classic, but it takes way too long to get to the good parts.', 3, 8),
+  (3, false, 'It was okay, but definitely worth the amount of pages', 1, 23);
