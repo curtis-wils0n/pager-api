@@ -4,7 +4,8 @@ VALUES
   ('Action'),
   ('Southern Gothic Fiction'),
   ('Fantasy Fiction'),
-  ('Fiction');
+  ('Fiction'),
+  ('Non-Fiction');
 
 INSERT INTO authors (name)
 VALUES
@@ -17,20 +18,44 @@ VALUES
   ('George Orwell'),
   ('Gene Wolfe'),
   ('Alastair Reynolds'),
-  ('Dan Simmons');
+  ('Dan Simmons'),
+  ('James Clear'),
+  ('Colleen Hoover'),
+  ('Mark Manson'),
+  ('Robert Greene'),
+  ('Robert T. Kiyosaki'),
+  ('Dale Carnegie'),
+  ('Stephen King'),
+  ('Richard Dawkins'),
+  ('Steven Erikson');
 
 INSERT INTO books (title, year, cover_art_url, genre_id)
 VALUES 
-  ('Dune', 1965, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/Dune_cover.jpeg?raw=true', 1),
-  ('Alita: Battle Angel', 1997, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/battle-angel-cover.jpeg?raw=true', 2),
-  ('To Kill a Mockingbird', 1960, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/mockingbird-cover.jpg?raw=true', 3),
-  ('The Lord of the Rings', 1954, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/the-lord-of-the-rings-book-cover.jpeg?raw=true', 4),
-  ('A Game of Thrones', 1996, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/GOT-cover.jpeg?raw=true', 4),
-  ('The Great Gatsby', 1925, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/great-gatsby-cover.jpeg?raw=true', 5),
-  ('1984', 1949, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/nineteen-eighty-four-1984-cover.jpeg?raw=true', 1),
-  ('Shadow of the Torturer', 1980, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/shadow-of-the-torturer.jpeg?raw=true', 1),
-  ('House of Suns', 2008, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/house-of-suns-cover.jpeg?raw=true', 1),
-  ('Hyperion', 1989, 'https://github.com/curtis-wils0n/pager-api/blob/main/src/db/assetts/Hyperion_cover.jpeg?raw=true', 1);
+  ('Dune', 1965, 'https://i0.wp.com/www.tor.com/wp-content/uploads/2019/07/Dune-cover-1.jpg?type=vertical&ssl=1', 1),
+  ('Alita: Battle Angel', 1997, 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ea319276482673.5c6ef1a84349a.jpeg', 2),
+  ('To Kill a Mockingbird', 1960, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg/1200px-To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg', 3),
+  ('The Lord of the Rings', 1954, 'https://upload.wikimedia.org/wikipedia/en/e/e9/First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif', 4),
+  ('A Game of Thrones', 1996, 'http://www.georgerrmartin.com/wp-content/uploads/2013/03/GOTMTI2.jpg', 4),
+  ('The Great Gatsby', 1925, 'https://149352626.v2.pressablecdn.com/wp-content/uploads/2018/02/CK-3-684x1024.jpg', 5),
+  ('1984', 1949, 'https://i0.wp.com/www.printmag.com/wp-content/uploads/2017/01/2a34d8_a6741e88335241308890543d203ad89dmv2.jpg?resize=500%2C815&ssl=1', 1),
+  ('Shadow of the Torturer', 1980, 'https://m.media-amazon.com/images/I/A19BG5wLHDL.jpg', 1),
+  ('House of Suns', 2008, 'https://upload.wikimedia.org/wikipedia/en/0/08/House_of_Suns_%28Amazon%29.jpg', 1),
+  ('Hyperion', 1989, 'https://upload.wikimedia.org/wikipedia/en/7/73/Hyperion_cover.jpg', 1),
+  ('Atomic Habits', 2018, 'https://covers.openlibrary.org/b/id/12886417-L.jpg', 6),
+  ('It Ends With Us', 2016, 'https://covers.openlibrary.org/b/id/12916653-L.jpg', 5),
+  ('The Subtle Art of Not Giving a Fuck', 2016, 'https://covers.openlibrary.org/b/id/12833521-L.jpg', 6),
+  ('The 48 Laws of Power', 1998, 'https://covers.openlibrary.org/b/id/12920669-L.jpg', 6),
+  ('It Starts With Us', 2022, 'https://covers.openlibrary.org/b/id/12964213-L.jpg', 5),
+  ('Rich Dad, Poor Dad', 1990, 'https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg', 6),
+  ('How to Win Friends and Influence People', 1913, 'https://covers.openlibrary.org/b/id/12996599-L.jpg', 6),
+  ('Verity', 2018, 'https://covers.openlibrary.org/b/id/12924621-L.jpg', 5),
+  ('Duma Key', 2008, 'https://covers.openlibrary.org/b/id/10582232-L.jpg', 5),
+  ('The God Delusion', 2001, 'https://covers.openlibrary.org/b/id/8231555-L.jpg', 6),
+  ('The Claw of the Conciliator', 1981, 'https://img.bookfrom.net/img/1707050829/1074_the_claw_of_the_conciliator.jpg', 1),
+  ('The Sword of the Lictor', 1981, 'https://covers.openlibrary.org/b/id/6594789-L.jpg', 1),
+  ('The Citadel of the Autarch', 1982, 'https://upload.wikimedia.org/wikipedia/en/6/62/TheCitadelOfTheAutarch.jpg', 1),
+  ('Gardens of the Moon', 1999, 'https://covers.openlibrary.org/b/id/6304201-L.jpg', 4),
+  ('Deadhouse Gates', 2000, 'https://covers.openlibrary.org/b/id/6424046-L.jpg', 4);
 
 INSERT INTO publishers (name, location, author_id, book_id)
 VALUES
@@ -41,9 +66,27 @@ VALUES
   ('Bantam Spectra', 'New York City, New York', 5, 5),
   ('Charles Scribner''s Sons', 'New York City, New York', 6, 6),
   ('Secker & Warburg', 'London, England', 7, 7),
+  -- TODO: add 'publishing_house' with name so we can link to id instead of 
+  -- repeating values. Could do the same with 'publishing_location'.
   ('Simon & Schuster', 'Manhattan, New York City', 8, 8),
+  ('Simon & Schuster', 'Manhattan, New York City', 12, 12),
+  ('Simon & Schuster', 'Manhattan, New York City', 12, 15),
+  ('Simon & Schuster', 'Manhattan, New York City', 16, 17),
+  ('Simon & Schuster', 'Manhattan, New York City', 8, 21),
+  ('Simon & Schuster', 'Manhattan, New York City', 8, 22),
+  ('Simon & Schuster', 'Manhattan, New York City', 8, 23),
   ('Gollancz', 'London, England', 9, 9),
-  ('Doubleday', 'New York City, New York', 10, 10);
+  ('Doubleday', 'New York City, New York', 10, 10),
+  ('Penguin', 'New York City, New York', 11, 11),
+  ('Harper Collins', 'New York City, New York', 13, 13),
+  ('Viking', 'New York City, New York', 14, 14),
+  ('Warner Books', 'New York City, New York', 15, 16),
+  ('Grand Central Publishing', 'New York City, New York', 12, 18),
+  ('Hodder & Stoughton', 'London, England', 17, 19),
+  ('Houghton Mifflin Harcourt', 'Boston, Massachusetts', 18, 20),
+  ('Tor', 'New York City: New York', 19, 24),
+  ('Tor', 'New York City: New York', 19, 25);
+
 
 INSERT INTO users (first_name, last_name, username, email, profile_pic_url)
 VALUES
