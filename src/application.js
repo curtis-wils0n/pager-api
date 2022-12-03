@@ -46,6 +46,12 @@ module.exports = function application(
   app.use('/api', user_lists(db));
   app.use('/api', user_reviews(db));
 
+  app.use('/login', (req, res) => {
+    res.send({
+      token: 'test123'
+    });
+  });
+
   if (ENV === "development" || ENV === "test") {
     Promise.all([
       read(path.resolve(__dirname, `db/schema/create.sql`)),
