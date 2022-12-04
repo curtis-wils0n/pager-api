@@ -11,6 +11,7 @@ const app = express();
 const db = require("./db");
 
 const books = require('./routes/books');
+const users = require('./routes/users');
 const lists = require('./routes/lists');
 const reviews = require('./routes/reviews');
 const shelves = require('./routes/users/shelves');
@@ -40,11 +41,13 @@ module.exports = function application(
   app.use(bodyparser.json());
   
   app.use('/api', books(db));
+  app.use('/api', users(db));
   app.use('/api', lists(db));
   app.use('/api', reviews(db));
   app.use('/api', shelves(db));
   app.use('/api', user_lists(db));
   app.use('/api', user_reviews(db));
+
 
   if (ENV === "development" || ENV === "test") {
     Promise.all([
