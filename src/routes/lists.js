@@ -22,18 +22,16 @@ module.exports = db => {
     const {
       title,
       description,
-      first_name,
-      last_name
+      user_id
     } = request.body;
     db.query(
       `
         INSERT INTO lists (
           title,
           description,
-          first_name,
-          last_name
-        ) VALUES ($1, $2, $3, $4);
-      `, [title, description, first_name, last_name]
+          user_id
+        ) VALUES ($1, $2, $3);
+      `, [title, description, user_id]
     )
       .then(() => {
         response.status(204).json([]);
