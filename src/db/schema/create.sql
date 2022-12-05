@@ -23,7 +23,7 @@ CREATE TABLE books (
   title VARCHAR(255) NOT NULL,
   year INTEGER NOT NULL,
   cover_art_url TEXT DEFAULT 'https://freesvg.org/img/CrazyTerabyte_Book.png',
-  description TEXT NOT NULL,
+  description TEXT,
   genre_id INTEGER REFERENCES genres(id) ON DELETE CASCADE
 );
 
