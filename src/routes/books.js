@@ -9,6 +9,7 @@ module.exports = db => {
         authors.name AS author_name,
         books.year,
         books.cover_art_url,
+        books.description,
         genres.name AS genre,
         publishers.name AS publisher_name,
         publishers.location
@@ -31,6 +32,7 @@ module.exports = db => {
         authors.name AS author_name,
         books.year,
         books.cover_art_url,
+        books.description,
         genres.name AS genre,
         publishers.name AS publisher_name,
         publishers.location
