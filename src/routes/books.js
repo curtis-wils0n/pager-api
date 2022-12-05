@@ -54,6 +54,7 @@ module.exports = db => {
       book_title,
       book_year,
       book_cover_art_url,
+      description,
       pub_name,
       pub_location
     } = request.body;
@@ -80,16 +81,17 @@ module.exports = db => {
       .then(() => {
         db.query(
           `
-          INSERT INTO books (title, year, cover_art_url, genre_id)
+          INSERT INTO books (title, year, cover_art_url, description, genre_id)
           SELECT 
             $1::text,
             $2::integer,
             $3::text,
-            (SELECT id FROM genres WHERE name ILIKE $4)::integer 
+            $4::text,
+            (SELECT id FROM genres WHERE name ILIKE $5)::integer 
           WHERE NOT EXISTS (
             SELECT 1 FROM books WHERE title = $1::text
           );
-        `, [book_title, book_year, book_cover_art_url, genre_name]
+        `, [book_title, book_year, book_cover_art_url, description, genre_name]
         )
       })
       .then(() => {
