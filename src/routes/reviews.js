@@ -24,7 +24,8 @@ module.exports = db => {
       JOIN publishers ON publishers.book_id = books.id
       JOIN authors ON publishers.author_id = authors.id
       JOIN genres ON books.genre_id = genres.id
-    `)
+      WHERE users.id = $1
+    `, [1])
       .then(({ rows: reviews }) => {
         response.json(reviews);
       });
