@@ -11,21 +11,15 @@ const app = express();
 const db = require("./db");
 
 const books = require('./routes/books');
-const users = require('./routes/users');
 const lists = require('./routes/lists');
 const reviews = require('./routes/reviews');
-const shelves = require('./routes/users/shelves');
-const user_lists = require('./routes/users/lists');
-const user_reviews = require('./routes/users/reviews');
 const allreviews = require('./routes/allreviews');
 
 function read(file) {
   return new Promise((resolve, reject) => {
     fs.readFile(
       file,
-      {
-        encoding: "utf-8"
-      },
+      {encoding: "utf-8"},
       (error, data) => {
         if (error) return reject(error);
         resolve(data);
@@ -42,12 +36,8 @@ module.exports = function application(
   app.use(bodyparser.json());
   
   app.use('/api', books(db));
-  app.use('/api', users(db));
   app.use('/api', lists(db));
   app.use('/api', reviews(db));
-  app.use('/api', shelves(db));
-  app.use('/api', user_lists(db));
-  app.use('/api', user_reviews(db));
   app.use('/api', allreviews(db));
 
 
