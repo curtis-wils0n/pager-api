@@ -7,7 +7,8 @@ module.exports = db => {
      lists.id, 
      lists.title,
      books.title,
-     books.cover_art_url
+     books.cover_art_url,
+     books.id AS book_id
      FROM lists
      LEFT OUTER JOIN on_list ON lists.id = on_list.list_id
      LEFT OUTER JOIN books ON on_list.book_id = books.id
