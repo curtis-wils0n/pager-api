@@ -12,11 +12,11 @@ module.exports = db => {
         users.last_name,
         books.title,
         books.id AS book_id,
-        authors.name AS author_name,
         books.year,
+        books.cover_art_url,
+        authors.name AS author_name,
         publishers.name as publisher_name,
         publishers.location,
-        books.cover_art_url,
         genres.name AS genre
       FROM reviews
       JOIN users ON reviews.user_id = users.id

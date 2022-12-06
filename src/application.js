@@ -9,7 +9,6 @@ const cors = require("cors");
 const app = express();
 
 const db = require("./db");
-
 const books = require('./routes/books');
 const lists = require('./routes/lists');
 const reviews = require('./routes/reviews');
@@ -39,7 +38,6 @@ module.exports = function application(
   app.use('/api', lists(db));
   app.use('/api', reviews(db));
   app.use('/api', allreviews(db));
-
 
   if (ENV === "development" || ENV === "test") {
     Promise.all([

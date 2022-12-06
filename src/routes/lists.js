@@ -13,7 +13,7 @@ module.exports = db => {
      LEFT OUTER JOIN on_list ON lists.id = on_list.list_id
      LEFT OUTER JOIN books ON on_list.book_id = books.id
      WHERE lists.user_id = $1
-    `, [1])
+    `, [1]) //Currently hardcoded as user 1's lists, can be changed to dynamic call later
       .then(({ rows: lists }) => {
         response.json(lists);
       });
