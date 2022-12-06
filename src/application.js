@@ -17,6 +17,7 @@ const reviews = require('./routes/reviews');
 const shelves = require('./routes/users/shelves');
 const user_lists = require('./routes/users/lists');
 const user_reviews = require('./routes/users/reviews');
+const allreviews = require('./routes/allreviews');
 
 function read(file) {
   return new Promise((resolve, reject) => {
@@ -47,6 +48,7 @@ module.exports = function application(
   app.use('/api', shelves(db));
   app.use('/api', user_lists(db));
   app.use('/api', user_reviews(db));
+  app.use('/api', allreviews(db));
 
 
   if (ENV === "development" || ENV === "test") {
