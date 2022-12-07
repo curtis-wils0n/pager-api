@@ -110,7 +110,9 @@ VALUES
   ('Abigail', 'Abraham', 'abby123', 'abi.abr@gmail.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
   ('Benjamin', 'Burgess', 'benjy', 'benj.burg@hotmail.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
   ('Chloe', 'Cornish', 'cornycorn', 'corny.corn@icloud.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
-  ('David', 'Dawood', 'dawood_david', 'dd@gmail.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png');
+  ('David', 'Dawood', 'dawood_david', 'dd@gmail.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
+  ('Paris', 'Lemay', 'blush', 'p.lemay@gmail.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
+  ('Nicole', 'Filipowski', 'nixx996', 'nixx996@icloud.com', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png');
 
 INSERT INTO shelves (user_id, book_id)
 VALUES
@@ -213,8 +215,12 @@ VALUES
 
 INSERT INTO reviews (stars, recommended, description, user_id, book_id)
 VALUES
-  (5, true, 'This is one of my favourite books, read it.', 2, 2),
+  (5, true, 'It was easy to follow what was happening even in the action scene panels and the action felt fast paced and had high stakes.', 2, 2),
+  (1, false, 'Made zero friends. Terrible read.', 5, 17),
   (5, true, 'This is the worst book on earth, don''t read it (just kidding)', 2, 9),
-  (2, true, 'I don''t think it''s the best book, but it was entertaining to read.', 4, 1),
   (4, false, 'I recognize that it''s a classic, but it takes way too long to get to the good parts.', 3, 8),
-  (3, false, 'It was okay, but definitely worth the amount of pages', 1, 23);
+  (2, true, 'I don''t think it''s the best book, but it was entertaining to read.', 4, 1),
+  (1, false, 'idk how to read.', 6, 18),
+  (3, false, 'It was okay, but definitely not worth the amount of pages', 1, 23),
+  (5, true, 'Couldn''t put my book down! WOW!!!', 1, 5),
+  (5, true, 'One of my favorite stories of all time, without a doubt. ', 1, 4);
